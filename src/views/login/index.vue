@@ -24,25 +24,25 @@
 
       <el-button type="primary" style="width:100%;margin-bottom:30px;" :loading="loading" @click.native.prevent="handleLogin">{{$t('login.logIn')}}</el-button>
 
-      <div class="tips">
+      <!--<div class="tips">
         <span>{{$t('login.username')}} : admin</span>
         <span>{{$t('login.password')}} : {{$t('login.any')}}</span>
       </div>
       <div class="tips">
         <span style="margin-right:18px;">{{$t('login.username')}} : editor</span>
         <span>{{$t('login.password')}} : {{$t('login.any')}}</span>
-      </div>
+      </div>-->
 
-      <el-button class="thirdparty-button" type="primary" @click="showDialog=true">{{$t('login.thirdparty')}}</el-button>
+      <!--el-button class="thirdparty-button" type="primary" @click="showDialog=true">{{$t('login.thirdparty')}}</el-button>-->
     </el-form>
 
-    <el-dialog :title="$t('login.thirdparty')" :visible.sync="showDialog" append-to-body>
+    <!--<el-dialog :title="$t('login.thirdparty')" :visible.sync="showDialog" append-to-body>
       {{$t('login.thirdpartyTips')}}
       <br/>
       <br/>
       <br/>
       <social-sign />
-    </el-dialog>
+    </el-dialog>-->
 
   </div>
 </template>
@@ -73,7 +73,7 @@ export default {
     return {
       loginForm: {
         username: 'admin',
-        password: '1111111'
+        password: '123456'
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -142,6 +142,10 @@ $light_gray:#eee;
 
 /* reset element-ui css */
 .login-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-image: url("../../../static/tinymce4.7.5/skins/lightgray/img/backgroud2.jpg");
   .el-input {
     display: inline-block;
     height: 47px;
@@ -171,8 +175,8 @@ $light_gray:#eee;
 
 <style rel="stylesheet/scss" lang="scss" scoped>
 $bg:#2d3a4b;
-$dark_gray:#889aa4;
-$light_gray:#eee;
+$dark_gray: #40ffdc;
+$light_gray: #ffffff;
 
 .login-container {
   position: fixed;
@@ -189,7 +193,7 @@ $light_gray:#eee;
   }
   .tips {
     font-size: 14px;
-    color: #fff;
+    color: #31ff64;
     margin-bottom: 10px;
     span {
       &:first-of-type {
@@ -199,7 +203,7 @@ $light_gray:#eee;
   }
   .svg-container {
     padding: 6px 5px 6px 15px;
-    color: $dark_gray;
+    color: $light_gray;
     vertical-align: middle;
     width: 30px;
     display: inline-block;
@@ -218,7 +222,7 @@ $light_gray:#eee;
       font-weight: bold;
     }
     .set-language {
-      color: #fff;
+      color: #ffffff;
       position: absolute;
       top: 5px;
       right: 0px;
@@ -229,7 +233,7 @@ $light_gray:#eee;
     right: 10px;
     top: 7px;
     font-size: 16px;
-    color: $dark_gray;
+    color: $light_gray;
     cursor: pointer;
     user-select: none;
   }
